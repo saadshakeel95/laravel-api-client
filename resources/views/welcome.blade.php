@@ -11,8 +11,8 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 document.getElementById('subscribe-btn').addEventListener('click', () => {
-    axios.post('http://127.0.0.1:8000/api/subscriber', {
-    emailAddress: 'test1@gmail.com',
+    axios.post("{{ config('app.url') }}api/subscriber", {
+    emailAddress: 'test100@gmail.com',
         firstName: 'Test',
         lastName: 'Last',
         dateOfBirth: '1995-05-05',
@@ -22,6 +22,7 @@ document.getElementById('subscribe-btn').addEventListener('click', () => {
     })
     .then(res => {
     console.log(res.data);
+    
     })
     .catch(err => {
     console.error(err.response?.data || err.message);
